@@ -295,6 +295,7 @@ ipcRenderer.on('zoomin', e => { webFrame.setZoomLevel(webFrame.getZoomLevel() + 
 ipcRenderer.on('zoomout', e => { webFrame.setZoomLevel(webFrame.getZoomLevel() - 1) })
 ipcRenderer.on('resetzoom', e => { webFrame.setZoomLevel(0) })
 ipcRenderer.on('main-save-and-close', () => update('SaveAndClose', currentFile))
+ipcRenderer.on('main-load', (e, fileName) => update('Load', fileName))
 
 socket.on('collab', data => gingko.ports.infoForElm.send({tag: 'RecvCollabState', data: data}))
 socket.on('collab-leave', data => gingko.ports.infoForElm.send({tag: 'CollaboratorDisconnected', data: data}))

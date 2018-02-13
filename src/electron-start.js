@@ -63,7 +63,12 @@ function createAppWindow () {
     win = null
   })
 
-
+  // loads the file if argument is given
+  win.webContents.once('dom-ready',  () => {
+    if (process.argv[2]){
+          win.webContents.send('main-load',process.argv[2]);
+    }
+  })
 
   // menu is defined outside this function, far below for now.
   Menu.setApplicationMenu(menu)

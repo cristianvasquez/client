@@ -12,3 +12,4 @@ Gingko-*
 repOut.txt
 data/*
 npm-debug.log
+.idea
